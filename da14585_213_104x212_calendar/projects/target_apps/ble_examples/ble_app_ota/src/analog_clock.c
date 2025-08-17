@@ -180,13 +180,13 @@ void draw_calendar_with_analog_clock(uint32_t unix_time, bool force_redraw)
         // 绘制日历标题
         char title_buf[20];
         sprintf(title_buf, "%d年%d月", year, month);
-        EPD_DrawUTF8(40, 2, 1, title_buf, EPD_ASCII_11X16, EPD_FontUTF8_16x16, BLACK, WHITE);
+        EPD_DrawUTF8(20, 0, 1, title_buf, EPD_ASCII_11X16, EPD_FontUTF8_16x16, BLACK, WHITE);
         
         // 绘制星期标题行
         const char* week_names_cn[] = {"日", "一", "二", "三", "四", "五", "六"};
         uint8_t x_start = 0;
         uint8_t y_pos =20;
-        uint8_t cell_width = 19;
+        uint8_t cell_width = 15;
         
         for (uint8_t i = 0; i < 7; i++)
         {
@@ -196,7 +196,7 @@ void draw_calendar_with_analog_clock(uint32_t unix_time, bool force_redraw)
         
         // 绘制日历网格
         uint8_t y_start = 40;
-        uint8_t cell_height = 14;
+        uint8_t cell_height = 12;
         uint8_t grid_width = 7 * cell_width;
         uint8_t grid_height = 7 * cell_height;
         /*
@@ -260,9 +260,9 @@ void draw_calendar_with_analog_clock(uint32_t unix_time, bool force_redraw)
     }
     
     // 在右下角绘制模拟时钟（120x120像素）
-    uint16_t clock_x = 139; // 适合290宽度屏幕的位置
+    uint16_t clock_x = 115; // 适合290宽度屏幕的位置
     uint16_t clock_y = 10;  // 垂直居中位置
-    uint16_t clock_size = 110;
+    uint16_t clock_size = 95;
     
     draw_analog_clock(clock_x, clock_y, clock_size, unix_time, force_redraw);
 }

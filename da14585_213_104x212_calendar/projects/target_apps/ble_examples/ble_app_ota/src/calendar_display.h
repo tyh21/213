@@ -25,7 +25,7 @@ void draw_calendar_page(uint32_t unix_time);
  * @param unix_time 当前Unix时间戳
  * @param force_redraw 是否强制重绘时钟
  */
-void draw_calendar_page_with_analog_clock(uint32_t unix_time, bool force_redraw);
+//void draw_calendar_page_with_analog_clock(uint32_t unix_time, bool force_redraw);
 
 #endif // __CALENDAR_DISPLAY_MODIFIED_H
 

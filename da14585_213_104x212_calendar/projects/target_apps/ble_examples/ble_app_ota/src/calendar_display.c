@@ -57,7 +57,7 @@ static void draw_calendar_title(uint16_t year, uint8_t month)
     sprintf(title_buf, "%d年%d月", year, month);
     
     // 在屏幕顶部居中显示标题
-    EPD_DrawUTF8(40, 2, 0, title_buf, EPD_ASCII_11X16, EPD_FontUTF8_16x16, BLACK, WHITE);
+    EPD_DrawUTF8(20, 2, 0, title_buf, EPD_ASCII_11X16, EPD_FontUTF8_16x16, BLACK, WHITE);
 }
 
 /**
@@ -66,8 +66,8 @@ static void draw_calendar_title(uint16_t year, uint8_t month)
 static void draw_week_header(void)
 {
     uint8_t x_start = 10;
-    uint8_t y_pos = 25;
-    uint8_t cell_width = 18;
+    uint8_t y_pos = 20;
+    uint8_t cell_width = 16;
     
     for (uint8_t i = 0; i < 7; i++)
     {
@@ -86,8 +86,8 @@ static void draw_calendar_dates(uint16_t year, uint8_t month, uint8_t current_da
 {
     uint8_t x_start = 10;
     uint8_t y_start = 40;
-    uint8_t cell_width = 28;
-    uint8_t cell_height = 12;
+    uint8_t cell_width = 20;
+    uint8_t cell_height = 10;
     
     uint8_t first_day = get_first_day_of_month(year, month);
     uint8_t days_count = get_days_in_month(year, month);
@@ -170,7 +170,9 @@ void draw_calendar_page(uint32_t unix_time)
  * @param unix_time 当前Unix时间戳
  * @param force_redraw 是否强制重绘时钟
  */
-void draw_calendar_page_with_analog_clock(uint32_t unix_time, bool force_redraw)
+
+ /*
+ void draw_calendar_page_with_analog_clock(uint32_t unix_time, bool force_redraw)
 {
     tm_t tm;
     transformTime(unix_time, &tm);
@@ -201,8 +203,11 @@ void draw_calendar_page_with_analog_clock(uint32_t unix_time, bool force_redraw)
     // 根据屏幕尺寸调整位置：290宽度屏幕
     uint16_t clock_x = 120; // 右侧位置
     uint16_t clock_y = 12;  // 垂直居中
-    uint16_t clock_size = 80;
+    uint16_t clock_size = 60;
     
     draw_analog_clock(clock_x, clock_y, clock_size, unix_time, force_redraw);
 }
+ */
 
+
+ 
